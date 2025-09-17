@@ -10,10 +10,10 @@ import cv2
 
 # -----------------------
 # -----------------------
-# USER-TWEAKABLE PARAMETERS
+# Training Settings
 # -----------------------
 # -----------------------
-TRAIN_DIR = "dataset/images"   # dataset path
+TRAIN_DIR = "dataset/images"   # path 
 IMG_SIZE = (224, 224)
 BATCH_SIZE = 16
 EPOCHS = 15
@@ -46,7 +46,6 @@ PROBABILITY_BLUR = 0.3
 PROBABILITY_BACKGROUND = 0.3
 PROBABILITY_HUE = 0.2
 
-# Preprocessing toggle
 USE_CUSTOM_PREPROCESSING = True
 
 # -----------------------
@@ -158,7 +157,7 @@ val_generator = val_datagen.flow_from_directory(
 )
 
 # -----------------------
-# Load existing model or create new one
+# Load existing model OR create a new one
 # -----------------------
 try:
     model = load_model("Clean.keras")
